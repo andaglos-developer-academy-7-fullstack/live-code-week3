@@ -17,6 +17,16 @@ output: 2
 - Dilarang menggunakan .sort!
 */
 
+function smallestNumber(params) {
+    let firstNum = params[0];
+    for (let i = 0; i < params.length; i++) {
+        if (params[i] < firstNum) {
+            firstNum = params[i];
+        }
+    }
+    return firstNum;
+}
+
 // TEST CASES
 console.log(smallestNumber([5, 2, 1, 4])); // 1
 console.log(smallestNumber([999, 5, 0, 1, 4, 998])); // 0
