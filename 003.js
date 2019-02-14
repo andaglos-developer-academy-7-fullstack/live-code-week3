@@ -26,17 +26,32 @@ output: []
 
 function pairUp(params) {
     let result = [];
-    for (let i = 0; i < params.length; i++) {
+    if (params.length % 2 === 0) {
         let temp = '';
-        for (let j = i; j < params.length; j++) {
-            temp = params[i] + ' dan ' + params[i+1];
-            if (params[i+1] === undefined) {
-                temp = params[i] + ' dan Instruktur';
-            }
+        for (let j = 0; j < params.length; j++) {
+            temp += params[j];
+            temp += ' dan ';
+            j++;
+            temp += params[j];
             result.push(temp);
-            break;
+            temp = '';
         }
-        break;
+    } else {
+        let temp = '';
+        for (let j = 0; j < params.length; j++) {
+            temp += params[j];
+            temp += ' dan ';
+            j++;
+            if (params[j] === undefined) {
+                temp += 'Instruktur';
+                result.push(temp);
+                temp = '';
+            } else {
+                temp += params[j];
+                result.push(temp);
+                temp = '';
+            }
+        }
     }
     return result;
 }
