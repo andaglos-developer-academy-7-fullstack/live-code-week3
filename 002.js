@@ -2,20 +2,30 @@
 ==================================
 Array Mastery: Smallest Number
 ==================================
-
 [INSTRUKSI]
 Function smallestNumber akan menerima satu parameter berupa array yang berisikan angka, dimana dengan asumsi kemungkinan angka dari 0 - 999, dan angka dalam array minimal 3 angka, dan tidak ada angka yang bernilai sama (ini adalah info tese case, bukan harus divalidasi/dicek).
 smallestNumber akan mengembalikan angka yang terkecil dari array tersebut.
-
 [CONTOH]
 input: [4, 2, 5, 1]
 output: 2
-
 [RULE]
 - Dilarang menggunakan Regex (.match, .test, dan sebagainya)
 - Dilarang menggunakan method .filter, atau .reduce!
 - Dilarang menggunakan .sort!
 */
+
+function smallestNumber(arr) {
+    let nilaiAwal = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (i === 0) {
+            nilaiAwal = arr[0];
+        }
+        if (arr[i] < nilaiAwal) {
+            nilaiAwal = arr[i];
+        }
+    }
+    return nilaiAwal;
+}
 
 // TEST CASES
 console.log(smallestNumber([5, 2, 1, 4])); // 1

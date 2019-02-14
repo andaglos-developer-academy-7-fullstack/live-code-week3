@@ -2,7 +2,6 @@
 ==================================
 Array Mastery: Love Me Not
 ==================================
-
 [INSTRUKSI]
 Seorang perempuan sedang menggalaui apakah seseorang menyukai dia atau tidak. Ketimbang mencabut kelopak bunga untuk menghitung jika dia 
 suka atau tidak, perempuan tersebut membuat sebuah program.
@@ -14,6 +13,27 @@ Mudah bukan? :)
 - Dilarang menggunakan Regex (.match, .test, dan sebagainya)
 - Dilarang menggunakan method .filter, atau .reduce!
 */
+
+function loveMeNot(choices) {
+    let loveTrue = 0;
+    let loveFalse = 0;
+
+    for (let i = 0; i < choices.length; i++) {
+        if (choices[i] === true) {
+            loveTrue++;
+        } else if (choices[i] === false) {
+            loveFalse++;
+        }
+    }
+
+    if (loveTrue > loveFalse) {
+        return "HE LOVES ME!";
+    } else if (loveTrue < loveFalse) {
+        return "HE DOES NOT LOVE ME :(";
+    } else {
+        return "GALAU";
+    }
+}
 
 
 // TEST CASES
