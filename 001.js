@@ -16,6 +16,25 @@ Mudah bukan? :)
 */
 
 
+function loveMeNot(params) {
+    let love = 0;
+    let hate = 0;
+    for (let i = 0; i < params.length; i++) {
+        if (params[i] === true) {
+            love++;
+        } else if (params[i] === false) {
+            hate++;
+        }
+    }
+    if (love === hate) {
+        return 'GALAU';
+    } else if (love > hate) {
+        return "HE LOVES ME!"
+    } else if (love < hate) {
+        return "HE DOES NOT LOVE ME :(";
+    }
+}
+
 // TEST CASES
 console.log(loveMeNot([true, false, false])); // "HE DOES NOT LOVE ME :("
 console.log(loveMeNot([true, true, false, false, true])); // "HE LOVES ME!"
