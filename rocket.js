@@ -31,6 +31,45 @@ output: "EVENS: 2, 8, 10"
 - Dilarang menggunakan .map, .filter, dan .reduce!
 */
 
+function groupOddEven(params) {
+  let odd = [];
+  let even = [];
+  for (let i = 0; i < params.length; i++) {
+    if (params[i] % 2 === 0) {
+      even.push(params[i]);
+    } else {
+      odd.push(params[i]);
+    }
+  }
+  if (odd.length === 0 && even.length === 0) {
+    return '';
+  } else if (odd.length !== 0 || even.length !== 0) {
+    let odds = '';
+    let evens = '';
+    for (let i = 0; i < odd.length; i++) {
+      if (i !== odd.length - 1) {
+        odds += odd[i] + ', ';
+      } else {
+        odds += odd[i];
+      }
+    }
+    for (let i = 0; i < even.length; i++) {
+      if (i !== even.length - 1) {
+        evens += even[i] + ', ';
+      } else {
+        evens += even[i];
+      }
+    }
+    if (odds.length === 0) {
+      return 'EVENS: ' + evens;
+    } else if (evens.length === 0) {
+      return 'ODDS: ' + odds;
+    } else {
+      return 'ODDS: ' + odds + ' EVENS: ' + evens;
+    }
+  }
+}
+
 // TEST CASES
 console.log(groupOddEven([1, 5, 8, 2, 3])); // "ODDS: 1, 5, 3 EVENS: 8, 2"
 console.log(groupOddEven([1, 1, 1])); // "ODDS: 1, 1, 1"

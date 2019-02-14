@@ -24,6 +24,23 @@ output: []
 - Dilarang menggunakan method .map, .filter, atau .reduce!
 */
 
+function pairUp(params) {
+    let result = [];
+    for (let i = 0; i < params.length; i++) {
+        let temp = '';
+        for (let j = i; j < params.length; j++) {
+            temp = params[i] + ' dan ' + params[i+1];
+            if (params[i+1] === undefined) {
+                temp = params[i] + ' dan Instruktur';
+            }
+            result.push(temp);
+            break;
+        }
+        break;
+    }
+    return result;
+}
+
 // TEST CASES
 console.log(pairUp(['Budi', 'Badu'])); // ['Budi dan Badu']
 console.log(pairUp(['Budi'])); // ['Budi dan Instruktur']
